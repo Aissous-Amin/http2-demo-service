@@ -1,0 +1,29 @@
+{
+  "name": "http2-demo-service",
+  "version": "1.0.0",
+  "description": "HTTP/2 Server with NodeJS and certify it with Let’s Encrypt.",
+  "main": "server.js",
+  "scripts": {
+    "http2": "node serverHttp2.js",
+    "http1": "node serverHttp1.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Aissous-Amin/http2-demo-service.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Aissous-Amin/http2-demo-service/issues"
+  },
+  "homepage": "https://github.com/Aissous-Amin/http2-demo-service#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.2",
+    "http-status": "^1.5.0",
+    "http2-express-bridge": "^1.0.7",
+    "moment": "^2.29.1"
+  }
+}
