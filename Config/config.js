@@ -1,5 +1,5 @@
 const path = require('path');
-const dir = path.join(process.cwd(), '/Config/.env');
+const ENV_DIR = path.join(process.cwd(), '/Config/.env');
 
 /**
  * Validate config.domain is set.
@@ -7,6 +7,7 @@ const dir = path.join(process.cwd(), '/Config/.env');
  * @param {object} config - Objet config.
  */
 const DomainCheck = () => {
+    // You can check other domain variable if you want - we do some cool stuff here!
     if (!process.env.PREFIX) {
         throw new Error('+ Important warning: config.prefix is empty. It should be set to the fully qualified prefix of the app.');
     }
@@ -19,7 +20,7 @@ const DomainCheck = () => {
  */
 const initGlobalConfig = () => {
     // You can do some cool stuff here ....
-    require('dotenv').config({ path: dir});
+    require('dotenv').config({ path: ENV_DIR});
     DomainCheck();
 };
 
