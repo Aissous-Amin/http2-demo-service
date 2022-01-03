@@ -4,8 +4,10 @@
   "description": "HTTP/2 Server with NodeJS and certify it with Let’s Encrypt.",
   "main": "server.js",
   "scripts": {
+    "start": "concurrently \"node serverHttp2.js\" \"node serverHttp1.js\" \"serve -s build -l 4000\" ",
     "http2": "node serverHttp2.js",
     "http1": "node serverHttp1.js",
+    "client": "serve -s build -l 4000",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
