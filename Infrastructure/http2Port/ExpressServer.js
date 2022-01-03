@@ -32,7 +32,7 @@ class ExpressServer {
                 allowHTTP1: true
             }
         server = http2.createSecureServer(options, app);
-        server.listen(process.env.PORT || 3001);
+        server.listen(process.env.PORT_SERVER_HTTP2 || 443);
         return server;
     }
 
@@ -47,7 +47,7 @@ class ExpressServer {
             /** Init service end-points. */
             routes(app);
             await this.http_listen(app);
-            console.log('Server express http2 is running on port : ', process.env.PORT);
+            console.log('Server express http2 is running on port : ', process.env.PORT_SERVER_HTTP2 || 443);
             return app;
         } catch (err) {
             console.error(err);

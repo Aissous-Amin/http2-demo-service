@@ -30,7 +30,7 @@ class ExpressServer {
                 allowHTTP1: true
             }
         server = https.createServer(options, app);
-        server.listen(3001);
+        server.listen(process.env.PORT_SERVER_HTTP1 || 3001);
         return server;
     }
 
@@ -45,7 +45,7 @@ class ExpressServer {
             /** Init service end-points. */
             routes(app);
             await this.http_listen(app);
-            console.log('Server express http1 is running on port : ', 3001);
+            console.log('Server express http1 is running on port : ', process.env.PORT_SERVER_HTTP1 || 3001);
             return app;
         } catch (err) {
             console.error(err);
